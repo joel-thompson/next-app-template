@@ -18,4 +18,7 @@ test("Page", () => {
   expect(
     screen.getByRole("heading", { level: 1, name: "Hello World" })
   ).toBeDefined();
+  // Check for SignedIn and SignedOut components
+  expect(screen.getByTestId("signed-in")).toBeDefined();
+  expect(screen.getByTestId("signed-out")).toBeDefined();
 });
