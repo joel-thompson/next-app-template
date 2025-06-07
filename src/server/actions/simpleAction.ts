@@ -8,7 +8,7 @@
  *
  * @example
  * // In a client component:
- * import { simpleAction } from "~/server/actions/serverActionExample";
+ * import { simpleAction } from "~/server/actions/simpleAction";
  *
  * // Using with onClick
  * const handleClick = async () => {
