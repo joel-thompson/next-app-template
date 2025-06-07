@@ -1,30 +1,19 @@
 import { getUserId } from "@/server/server-only/getUserId";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { auth, clerkClient } from "@clerk/nextjs/server";
-import { Suspense } from "react";
 
-export default async function Page() {
+export default function Page() {
   return (
     <div className="container flex flex-col gap-5 p-5">
-      <SignedOut>
-        <p>Please sign in to continue</p>
-      </SignedOut>
-      <SignedIn>
-        <Suspense fallback={<p>Loading...</p>}>
-          <SignedInContent />
-        </Suspense>
-      </SignedIn>
+      <SignedInContent />
     </div>
   );
 }
 
 const SignedInContent = async () => {
   const user = await auth();
-  if (!user?.userId) {
-    throw new Error("User not authenticated");
-  }
+  // We don't need to check for userId here since the layout already ensures authentication
   const clerkClientResult = await clerkClient();
-  const fullUserData = await clerkClientResult.users.getUser(user.userId);
+  const fullUserData = await clerkClientResult.users.getUser(user.userId!);
 
   // Server only function called in a server component
   const userId = await getUserId();
