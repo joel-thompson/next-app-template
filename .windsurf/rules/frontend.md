@@ -16,7 +16,6 @@ globs: *.tsx, **/*.tsx
 - Use Tailwind CSS for styling.
 - Use Shadcn UI for components.
 
-# Data Fetching & Forms
-- Use TanStack Query (react-query) for frontend data fetching.
+# Data Fetching
+- Use TanStack Query (react-query) for frontend client side data fetching.
 - Use Zod for validation.
-
