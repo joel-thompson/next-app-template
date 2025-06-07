@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { simpleAction } from "@/server/actions/serverActionExample";
+import { simpleAction } from "@/server/actions/simpleAction";
 import { Button } from "./ui/button";
 
 export function ServerActionExample() {

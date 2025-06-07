@@ -1,4 +1,4 @@
-import { getUserId } from "@/server/serverOnlyExample";
+import { getUserId } from "@/server/server-only/getUserId";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import { Suspense } from "react";
