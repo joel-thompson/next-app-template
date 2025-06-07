@@ -1,13 +1,10 @@
 import { getUserId } from "@/server/server-only/getUserId";
 import { auth, clerkClient } from "@clerk/nextjs/server";
-import { Suspense } from "react";
 
 export default function Page() {
   return (
     <div className="container flex flex-col gap-5 p-5">
-      <Suspense fallback={<p>Loading...</p>}>
-        <SignedInContent />
-      </Suspense>
+      <SignedInContent />
     </div>
   );
 }
