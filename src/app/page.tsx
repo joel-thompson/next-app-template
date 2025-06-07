@@ -3,6 +3,9 @@ import { Counter } from "@/components/Counter";
 import { SignedIn } from "@clerk/nextjs";
 import { SignedOut } from "@clerk/nextjs";
 import { ServerActionExample } from "@/components/ServerActionExample";
+import { Posts } from "@/components/Posts";
+
+// this page has a mix of examples using the features in this template
 
 export default function Home() {
   return (
@@ -12,6 +15,7 @@ export default function Home() {
       <SignedIn>You are signed in</SignedIn>
       <Counter />
       <ServerActionExample />
+      <Posts />
     </div>
   );
 }
