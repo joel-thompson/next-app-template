@@ -1,7 +1,22 @@
-import { index, integer, pgTableCreator, timestamp, varchar } from "drizzle-orm/pg-core";
+import {
+  index,
+  integer,
+  pgTableCreator,
+  timestamp,
+  varchar,
+} from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
-export const createTable = pgTableCreator((name) => `next-app-template_${name}`);
+// https://orm.drizzle.team/docs/goodies#multi-project-schema
+export const PROJECT_PREFIX = "next-app-template";
+
+export const createTable = pgTableCreator(
+  (name) => `${PROJECT_PREFIX}_${name}`
+);
+
+function indexName(baseName: string): string {
+  return `${PROJECT_PREFIX}_${baseName}_idx`;
+}
 
 export const example_posts = createTable(
   "post",
@@ -12,10 +27,8 @@ export const example_posts = createTable(
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
-      () => new Date(),
+      () => new Date()
     ),
   },
-  (example) => [
-    index("example_name").on(example.name),
-  ],
+  (example) => [index(indexName("post_name")).on(example.name)]
 );
