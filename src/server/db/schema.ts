@@ -7,6 +7,7 @@ import {
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
+// TODO: going to replace with an env, and throw a build error if it's not set
 // https://orm.drizzle.team/docs/goodies#multi-project-schema
 export const PROJECT_PREFIX = "next-app-template";
 
