@@ -1,12 +1,12 @@
 import { type Config } from "drizzle-kit";
-import { PROJECT_PREFIX } from "./src/server/db/schema";
+import { env } from "./src/env";
 
 export default {
   schema: "./src/server/db/schema.ts",
   dialect: "postgresql",
   dbCredentials: {
-    url: process.env.DATABASE_URL || "",
+    url: env.DATABASE_URL,
   },
   // https://orm.drizzle.team/docs/goodies#multi-project-schema
-  tablesFilter: [`${PROJECT_PREFIX}_*`],
+  tablesFilter: [`${env.DRIZZLE_PREFIX}_*`],
 } satisfies Config;

@@ -6,17 +6,16 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
+import { env } from "@/env";
 
-// TODO: going to replace with an env, and throw a build error if it's not set
-// https://orm.drizzle.team/docs/goodies#multi-project-schema
-export const PROJECT_PREFIX = "next-app-template";
+// https://orm.drizzle.team/docs/goodies#multi-project-schema;
 
 export const createTable = pgTableCreator(
-  (name) => `${PROJECT_PREFIX}_${name}`
+  (name) => `${env.DRIZZLE_PREFIX}_${name}`
 );
 
 function indexName(baseName: string): string {
-  return `${PROJECT_PREFIX}_${baseName}_idx`;
+  return `${env.DRIZZLE_PREFIX}_${baseName}_idx`;
 }
 
 export const example_posts = createTable(
