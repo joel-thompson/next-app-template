@@ -1,6 +1,0 @@
----
-description: Use pnpm as my package manager
-globs: **/*.ts, **/*.tsx, package.json
----
-
-Always use pnpm as my package manager when adding/updating/removing packages
