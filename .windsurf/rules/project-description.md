@@ -14,6 +14,8 @@ This project uses the following:
 
 Always use pnpm as my package manager when adding/updating/removing packages
 
+When adding new components, use shadcn when possible
+
 Pages that require authentication go under the (authenticated) route group
 
 Publicly accessible pages go under the (unauthenticated) route
