@@ -1,7 +1,8 @@
 import React from "react";
-import { Counter } from "@/components/Counter";
 import { SignedIn } from "@clerk/nextjs";
 import { SignedOut } from "@clerk/nextjs";
+
+import { Counter } from "@/components/Counter";
 import { ServerActionExample } from "@/components/ServerActionExample";
 import { Posts } from "@/components/Posts";
 

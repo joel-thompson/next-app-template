@@ -1,5 +1,6 @@
 import { expect, test } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
+
 import { Counter } from "@/components/Counter";
 
 test("Counter component", () => {
