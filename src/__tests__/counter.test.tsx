@@ -9,7 +9,9 @@ test("Counter component", () => {
   // Check initial state
   expect(screen.getByText("Count: 0")).toBeDefined();
 
-  // Test increment
+  // Check button labels
+  expect(screen.getByText("Increment")).toBeDefined();
+  expect(screen.getByText("Decrement")).toBeDefined();
   const incrementButton = screen.getByText("Increment");
   fireEvent.click(incrementButton);
   expect(screen.getByText("Count: 1")).toBeDefined();
